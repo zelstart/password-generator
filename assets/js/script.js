@@ -1,43 +1,65 @@
 // Assignment code here
-// arrays for 'password contains' options. this was my first thought:
-var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-var special = ["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "\\", "|", ";", ":", ",", "<", ".", ">", "/", "?"];
-var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-// or should it be like this? looking on forums for people asking about password generators, I saw a lot of this:
+// an object containing all potential characters, grouped by type
 var characters = {
-lower: "abcdefghijklmnopqrstuvwxyz",
-upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-spec: "`~!@#$%^&*()_+-=[]\{}|;':,./<>",
-num: "1234567890",
+lowerCase: "abcdefghijklmnopqrstuvwxyz",
+upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+specialChars: "`~!@#$%^&*()_+-=[]\{}|;':,./<>",
+numbers: "1234567890",
+empty: "",
 };
 
 // when clicking generate password, bring up a window alert
 // ask the user for password length (must be more than 8 and less than 128 characters in length)
 function generatePassword() {
   var passLength = prompt("How many characters do you want in your password? (Must be between 8 and 128 characters)");
+    // alert if password is too short 
+    if (passLength < 8) {
+      window.alert("Password must be at least 8 characters!")
+      return generatePassword;
+    } else {
+
+// alert if password is too long 
+    if (passLength > 128) {
+    window.alert("Password cannot be more than 128 characters!")
+    return generatePassword;
+    }
+
+// alert if user enters an invalid character (i.e a letter or symbol instead of a number)
+  }
+  if (isNaN(passLength)) {
+    window.alert("Please enter a valid number!")
+    return generatePassword;
+    }
   var includeLower = confirm("Would you like to include lowercase letters? (OK for Yes and Cancel for No)");
   var includeUpper = confirm("Would you like to include uppercase letters? (OK for Yes and Cancel for No)");
-  var includeSpec = confirm("Would you like to include special characters? (OK for Yes and Cancel for No)")
+  var includeSpecial = confirm("Would you like to include special characters? (OK for Yes and Cancel for No)")
   var includeNumbers = confirm("Would you like to include numbers? (OK for Yes and Cancel for No)")
+
+// alert if user chooses "no" for all four types of characters 
+  if (includeLower === false && includeUpper === false && includeSpecial === false && includeNumbers === false) {
+    window.alert("Please choose at least one character type.")
+  }
+
+
+
+// if include lowercase = true
+
+// if include uppercase = true
+
+// if include spec = true
+
+// if include numbers = true
+
+
+// need to generate a password that contains the number of characters defined by passLength
+for (var = 0; i < passLength; i++) {
+
+}
 }
 
-// can't get this to work right now
-// // alert if password is too short 
-// if (passLength > 8) {
-//   window.alert("Password must be at least 8 characters")
-//   return generatePassword;
-// }
-// // alert if password is too long 
-// if (passLength < 128) {
-//   window.alert("Password cannot be more than 128 characters")
-//   return generatePassword;
-// }
 
 
-
-// randomly generate password based on user conditions (multistep) 
 
 
 
