@@ -4,10 +4,10 @@
 var characters = {
 lowerCase: "abcdefghijklmnopqrstuvwxyz",
 upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-specialChars: "`~!@#$%^&*()_+-=[]\{}|;':,./<>",
+specialChar: "`~!@#$%^&*()_+-=[]\{}|;':,./<>",
 numbers: "1234567890",
-empty: "",
 };
+
 
 // when clicking generate password, bring up a window alert
 // ask the user for password length (must be more than 8 and less than 128 characters in length)
@@ -43,24 +43,20 @@ function generatePassword() {
 
 
 
-// if include lowercase = true
-
-// if include uppercase = true
-
-// if include spec = true
-
-// if include numbers = true
-
-
 // need to generate a password that contains the number of characters defined by passLength
-for (var = 0; i < passLength; i++) {
+for (var i = 0; i < passLength; i++) {
+  // need to choose random items from the characters selected.
+
+  // if include lowercase = true ?
+
+  // if include uppercase = true ?
+
+  // if include spec = true ?
+
+  // if include numbers = true ?
 
 }
 }
-
-
-
-
 
 
 
