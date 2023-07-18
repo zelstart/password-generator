@@ -31,6 +31,8 @@ function generatePassword() {
     window.alert("Please enter a valid number!")
     return generatePassword;
   }
+
+  // ask user to choose which characters to include
   var includeLower = confirm("Would you like to include lowercase letters? (OK for Yes and Cancel for No)");
   var includeUpper = confirm("Would you like to include uppercase letters? (OK for Yes and Cancel for No)");
   var includeSpecial = confirm("Would you like to include special characters? (OK for Yes and Cancel for No)");
@@ -41,8 +43,10 @@ function generatePassword() {
     window.alert("Please choose at least one character type.")
   }
 
+  // empty container to store user's choices
   var userChoices = "";
 
+  // if statements to determine which types of characters will be used
   if (includeLower === true) {
     userChoices += characters.lowerCase
   }
@@ -60,16 +64,14 @@ function generatePassword() {
   }
 
   var password = "";
-  // need to generate a password that contains the number of characters defined by passLength
+  // generate a password that contains the number of characters defined by passLength
   for (var i = 0; i < passLength; i++) {
-    // need to choose random items from the characters selected.
+    // choose random items from the characters the user selected.
     password += userChoices.charAt(Math.floor(Math.random() * userChoices.length));
   }
   console.log(password)
   return password;
 }
-
-
 
 
 // Get references to the #generate element
