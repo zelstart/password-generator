@@ -1,6 +1,6 @@
 # Password Generator
 ## Description
-This application generates a password based on user's input.
+This application generates a password based on the user's desired password criteria, including the length and what characters the password will contain. 
 
 ### User Story
 ```
@@ -37,7 +37,8 @@ THEN the password is either displayed in an alert or written to the page
 ```
 
 ## Screenshots
-![GIF of password generator being used](assets/images/password-generator.gif)
+![GIF of password generator being used with correct inputs](assets/images/password-generator.gif)  
+![GIF of password generator being used with incorrect inputs](assets/images/password-generator2.gif)  
 
 ## Credits
 Bobbi Tarkany - helped with figuring out how to put all user's choices into a container and generate a password with them

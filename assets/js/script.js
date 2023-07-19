@@ -15,21 +15,21 @@ function generatePassword() {
   var passLength = prompt("How many characters do you want in your password? (Must be between 8 and 128 characters)");
   // alert if password is too short 
   if (passLength < 8) {
-    window.alert("Password must be at least 8 characters!")
-    return generatePassword;
+    window.alert("Password must be at least 8 characters!");
+    return;
   } else {
 
     // alert if password is too long 
     if (passLength > 128) {
-      window.alert("Password cannot be more than 128 characters!")
-      return generatePassword;
+      window.alert("Password cannot be more than 128 characters!");
+      return;
     }
 
     // alert if user enters an invalid character (i.e a letter or symbol instead of a number)
   }
   if (isNaN(passLength)) {
-    window.alert("Please enter a valid number!")
-    return generatePassword;
+    window.alert("Please enter a valid number!");
+    return;
   }
 
   // ask user to choose which characters to include
@@ -40,7 +40,7 @@ function generatePassword() {
 
   // alert if user chooses "no" for all four types of characters 
   if (includeLower === false && includeUpper === false && includeSpecial === false && includeNumbers === false) {
-    window.alert("Please choose at least one character type.")
+    window.alert("Please choose at least one character type.");
   }
 
   // empty container to store user's choices
@@ -63,7 +63,9 @@ function generatePassword() {
     userChoices += characters.numbers
   }
 
+  // an empty container for the completed password
   var password = "";
+
   // generate a password that contains the number of characters defined by passLength
   for (var i = 0; i < passLength; i++) {
     // choose random items from the characters the user selected.
@@ -81,9 +83,12 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  // if a password cannot be generated due to invalid user responses, this will keep the text field blank.
+  if (password == null | password === undefined) {
+    passwordText.value = ""
+  } else {
   passwordText.value = password;
-
+  }
 }
 
 // Add event listener to generate button
