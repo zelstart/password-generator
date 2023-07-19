@@ -41,6 +41,7 @@ THEN the password is either displayed in an alert or written to the page
 ![GIF of password generator being used with incorrect inputs](assets/images/password-generator2.gif)  
 
 ## Credits
+[Original Code](https://github.com/coding-boot-camp/friendly-parakeet)  
 Bobbi Tarkany - helped with figuring out how to put all user's choices into a container and generate a password with them
 
 ## License 
