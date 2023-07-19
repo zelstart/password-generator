@@ -1,6 +1,6 @@
 # Password Generator
-
 ## Description
+This application generates a password based on user's input.
 
 ### User Story
 ```
@@ -37,12 +37,12 @@ THEN the password is either displayed in an alert or written to the page
 ```
 
 ## Screenshots
-
+![GIF of password generator being used](assets/images/password-generator.gif)
 
 ## Credits
-
+Bobbi Tarkany - helped with figuring out how to put all user's choices into a container and generate a password with them
 
 ## License 
-
+MIT
 
 ## Deployed Website Link
